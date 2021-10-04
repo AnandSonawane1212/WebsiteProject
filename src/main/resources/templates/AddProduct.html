@@ -1,0 +1,63 @@
+    <!DOCTYPE html>   
+    <html>   
+    <head>  
+    <meta name="viewport" content="width=device-width, initial-scale=1">  
+    <title> Add Product</title>  
+    <style>   
+    Body {  
+      font-family: Calibri, Helvetica, sans-serif;  
+      background-color: #98FB98;  
+    }  
+    button {   
+           background-color: lightblue;   
+           width: 100%;  
+            color: black;   
+            padding: 15px;   
+            margin: 10px 0px;   
+            border: none;   
+            cursor: pointer;   
+             }   
+     form {   
+            border: 3px solid #f1f1f1;   
+        }   
+     input[type=text], input[type=password] {   
+            width: 100%;   
+            margin: 10px 0;  
+            padding: 12px 20px;   
+            display: inline-block;   
+            border: 2px solid green;   
+            box-sizing: border-box;   
+        }  
+     button:hover {   
+            opacity: 0.7;   
+        }   
+      .cancelbtn {   
+            width: auto;   
+            padding: 10px 18px;  
+            margin: 10px 5px;  
+        }   
+            
+         
+     .container {   
+            padding: 100px;   
+            background-color: silver;  
+        }   
+    </style>   
+    </head>    
+    <body>    
+        <center> <h1> Add Product </h1> </center>   
+        <form action="/addproductbyadmin" method="post" modelAttribute="${product}">  
+            <div class="container">   
+                <label>Product Name : </label>   
+                <input type="text" placeholder="Enter Product Name" name="productName" required>  
+                <label>Price : </label>   
+                <input type="text" placeholder="Price of Product" name="priceOfProduct" required>  
+                <label>Category : </label>   
+                <input type="text" placeholder="Enter Category" name="category" required>  
+                <label>Type of Product : </label>   
+                <input type="text" placeholder="Enter type of Product" name="productType" required>
+                <button type="submit">Add Product</button>   
+            </div>   
+        </form>     
+    </body>     
+    </html>  

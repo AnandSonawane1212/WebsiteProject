@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head lang="en" xmlns:th="http://www.thymeleaf.org">
+<title>Admin</title>
+<style>
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04AA6D;
+  color: white;
+}
+.fcc-btn {
+  background-color: #199319;
+  color: white;
+  padding: 15px 25px;
+  text-decoration: none;
+}
+.fcc-btn:hover {
+  background-color: #223094;
+}
+</style>
+</head>
+<body>
+<h1>Welcome Admin</h1>
+<h2><a class="btn btn-primary" href="/logout">Logout</a></h2>
+
+
+<h3>Register Users</h3>
+<table id="customers" href="">
+  <tr >
+	<th>User Id</th>
+    <th>User Name</th>
+    <th>Email</th>
+    <th>Contact No</th>
+    <th>Type of User</th>
+  </tr>
+  <tr th:each="data : ${userList}">
+  <td th:text="${data.userId}"></td>
+    <td th:text="${data.userName}"></td>
+    <td th:text="${data.userMailId}"></td>
+    <td th:text="${data.userContact}"></td>
+    <td th:text="${data.userType}"></td>
+  </tr>
+
+</table>
+
+<h3>Products List</h3>
+<table id="customers" href="">
+  <tr >
+	<th>Product Id</th>
+    <th>Product Name</th>
+    <th>Product Type</th>
+    <th>Category</th>
+    <th>Price</th>
+  </tr>
+  <tr th:each="data : ${productList}">
+  	<td th:text="${data.productId}"></td>
+  	<td th:text="${data.productName}"></td>
+    <td th:text="${data.productType}"></td>
+    <td th:text="${data.category.categoryName}"></td>
+    <td th:text="${data.priceOfProduct}"></td>
+  </tr>
+
+</table>
+<h3><a class="btn btn-primary" href="/addproduct">Add Product</a>  </h3>
+
+<h3>Purchase Details</h3>
+<h4>see Details by <a href="byDate">Date</a> or <a href="byCategory">Category</a> </h4>
+<table id="customers" href="">
+  <tr >
+	<th>Purchase Id</th>
+    <th>User Id</th>
+    <th>Product Id</th>
+    <th>Date</th>
+    <th>Category</th>
+    <th>Price of Product</th>
+  </tr>
+  
+  <tr th:each="data : ${purchaseList}">
+  <td th:text="${data.purchaseId}"></td>
+    <td th:text="${data.userId}"></td>
+    <td th:text="${data.productId}"></td>
+    <td th:text="${data.dateOfPurchase}"></td>
+    <td th:text="${data.categoryName}"></td>
+    <td th:text="${data.price}"></td>
+  </tr>
+
+</table>
+  
+
+
+</body>
+</html>
+
